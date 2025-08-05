@@ -1,0 +1,6 @@
+GET http://localhost:3001/api/notes/ HTTP/1.1
+Accept: application/json
+User-Agent: curl/7.64.1
+Host: localhost:3001
+Connection: close
+Content-Type: application/json 
