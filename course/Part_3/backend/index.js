@@ -5,6 +5,7 @@ const cors = require('cors');
 
 app.use(express.json()); // Middleware to parse JSON bodies
 app.use(cors()); // Enable CORS for all routes
+app.use(express.static('dist'))
 
 let notes = [
   {
