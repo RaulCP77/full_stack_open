@@ -7,51 +7,39 @@ app.use(express.json()); // Middleware to parse JSON bodies
 app.use(cors()); // Enable CORS for all routes
 app.use(express.static('dist'))
 
-let notes = [
-  {
-    id: 1,
-    content: "HTML is easy",
-    important: true
-  },
-  {
-    id: 2,
-    content: "Browser can execute only JavaScript",
-    important: false
-  },
-  {
-    id: 3,
-    content: "GET and POST are the most important methods of HTTP protocol",
-    important: true
-  }
+let persons = [
+  { 
+    name: 'Arto Hellas', 
+    number: '040-123456', 
+    id: 1 }
 ]
-
 app.get('/', (req, res) => {
-  res.send('<h1>Hello World!</h1>');
+  res.send('<h1>Hello World 2!</h1>');
 });
-app.get('/api/notes', (req, res) => {
-  res.json(notes);
+app.get('/api/persons', (req, res) => {
+  res.json(persons);
 });
-app.get('/api/notes/:id', (req, res) => {
+app.get('/api/persons/:id', (req, res) => {
   const id = Number(req.params.id);
-  const note = notes.find(note => note.id === id);
-  if (note) {
-    res.json(note);
+  const person = persons.find(person => person.id === id);
+  if (person) {
+    res.json(person);
   } else {
     res.status(404).end();
   }
 });
-app.delete('/api/notes/:id', (req, res) => {
+app.delete('/api/persons/:id', (req, res) => {
   const id = Number(req.params.id);
-  notes = notes.filter(note => note.id !== id);
+  persons = persons.filter(person => person.id !== id);
   res.status(204).end();
 });
 
 const generateId = () => {
-  const maxId = notes.length > 0 ? Math.max(...notes.map(note => note.id)) : 0;
+  const maxId = persons.length > 0 ? Math.max(...persons.map(person => person.id)) : 0;
   return maxId + 1;
 };
 
-app.post('/api/notes', (req, res) => {
+app.post('/api/persons', (req, res) => {
   const body = req.body;
 
   if (!body || !body.content) {
@@ -64,7 +52,7 @@ app.post('/api/notes', (req, res) => {
     id: generateId()
   };
 
-  notes = notes.concat(note);
+  persons = persons.concat(note);
   res.json(note);
 });
 const unknownEndpoint = (request, response) => {

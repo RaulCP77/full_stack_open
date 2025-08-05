@@ -1,14 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Filter from './components/Filter'
 import PersonForm from './components/PersonForm'
 import Person from './components/Person'
 import phonebookServices from './services/phonebook'
-import axios from 'axios'
-import { useEffect } from 'react'
+
 const App = () => {
-  const [persons, setPersons] = useState([
-    { name: 'Arto Hellas', number: '040-123456', id: 1 }
-  ])
+  const [persons, setPersons] = useState([])
   const [newName, setNewName] = useState('Add new name')
   const [newNumber, setNewNumber] = useState('Add new number')
   const [filter, setFilter] = useState('')
