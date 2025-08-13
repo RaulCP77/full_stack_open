@@ -26,7 +26,7 @@ const App = () => {
   const filteredPersons = filter
     ? persons.filter((person) => person.name.toLowerCase().includes(filter.toLowerCase()))
     : persons;
-  
+
     const handleNameChange = (event) => {
     setNewName(event.target.value);
   }
@@ -37,9 +37,9 @@ const App = () => {
     event.preventDefault();
     const personObject = {
       name: newName,
-      number: newNumber,
-      id: (persons.length + 1).toString()
+      number: newNumber
     }
+    
     if (checkIfPersonExists(newName)) {
       if (window.confirm(`${newName} is already added to phonebook, replace the old number with a new one?`)) {
         const personToUpdate = persons.find(person => person.name.toLowerCase() === newName.toLowerCase());
