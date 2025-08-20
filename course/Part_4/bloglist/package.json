@@ -1,0 +1,23 @@
+{
+  "name": "bloglist",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node index.js",
+    "dev": "NODE_ENV=development nodemon index.js",
+    "test": "NODE_ENV=test node --test"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongoose": "^8.17.1",
+    "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "dotenv": "^17.2.1",
+    "supertest": "^7.1.4"
+  }
+}
