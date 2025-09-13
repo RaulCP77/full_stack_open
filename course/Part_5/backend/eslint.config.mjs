@@ -4,6 +4,7 @@ import stylisticJs from '@stylistic/eslint-plugin'
 
 export default [
   js.configs.recommended,
+  { ignores: ['dist'] },
   {
     files: ['**/*.js'],
     languageOptions: {

@@ -1,0 +1,11 @@
+
+# Playwright
+node_modules/
+/test-results/
+/backend/
+/notes/
+/tests/
+/tests-examples/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
