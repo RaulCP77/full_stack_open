@@ -9,6 +9,4 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-package-lock.json
-package.json
-playwright.config.json
+# VS Code
